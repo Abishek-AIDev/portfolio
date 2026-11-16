@@ -1,0 +1,527 @@
+
+/* =====================================================
+   1. COLORS AND SETTINGS - PREMIUM NEUTRAL THEME
+===================================================== */
+
+:root {
+  --color-background: #F5F5F5;
+  --color-card: #FFFFFF;
+  --color-text: #202124;
+  --color-text-soft: #6B7280;
+
+  --color-pink: #4B5563;
+  --color-rose: #374151;
+  --color-gold: #9CA3AF;
+
+  --gradient-main: linear-gradient(
+    135deg,
+    #FFFFFF 0%,
+    #D1D5DB 50%,
+    #9CA3AF 100%
+  );
+
+  --radius: 20px;
+  --glow: 0 0 30px rgba(107, 114, 128, 0.15);
+
+  --border: 1px solid rgba(107, 114, 128, 0.18);
+  --glass: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =====================================================
+   2. BASIC RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(156, 163, 175, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(209, 213, 219, 0.25),
+      transparent 35%
+    ),
+    var(--color-background);
+
+  color: var(--color-text);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* =====================================================
+   3. NAVIGATION BAR
+===================================================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: 16px 6%;
+
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(107, 114, 128, 0.18);
+}
+
+.navbar-logo {
+  font-size: 1.35rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #374151;
+}
+
+.navbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+}
+
+.navbar-links a {
+  color: var(--color-text-soft);
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--color-rose);
+}
+
+
+/* =====================================================
+   4. COMMON SECTIONS
+===================================================== */
+
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 90px 6%;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+
+  width: 65px;
+  height: 3px;
+
+  margin-top: 12px;
+  border-radius: 10px;
+
+  background: var(--gradient-main);
+  box-shadow: var(--glow);
+}
+
+.section-note {
+  color: var(--color-text-soft);
+  margin-bottom: 24px;
+}
+
+
+/* =====================================================
+   5. PREMIUM CARDS AND BUTTONS
+===================================================== */
+
+.card {
+  position: relative;
+
+  background: linear-gradient(
+    145deg,
+    #FFFFFF,
+    #F1F1F1
+  );
+
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(75, 85, 99, 0.5);
+
+  box-shadow:
+    0 15px 35px rgba(75, 85, 99, 0.12),
+    var(--glow);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.button {
+  display: inline-block;
+
+  padding: 13px 28px;
+  border-radius: 999px;
+
+  font-weight: bold;
+  letter-spacing: 0.3px;
+
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glow);
+}
+
+.button-primary {
+  background: linear-gradient(
+    135deg,
+    #374151,
+    #6B7280
+  );
+
+  color: #FFFFFF;
+
+  box-shadow: 0 5px 20px rgba(75, 85, 99, 0.18);
+}
+
+.button-outline {
+  border: 1px solid #6B7280;
+  color: #374151;
+  background: rgba(107, 114, 128, 0.04);
+}
+
+.button-outline:hover {
+  background: rgba(107, 114, 128, 0.12);
+}
+
+
+/* =====================================================
+   6. HERO SECTION
+===================================================== */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 55px;
+  min-height: 88vh;
+}
+
+.hero-greeting {
+  color: var(--color-rose);
+  font-size: 1.05rem;
+  letter-spacing: 1.5px;
+}
+
+.hero-name {
+  font-size: 3.8rem;
+  line-height: 1.2;
+  margin: 12px 0;
+}
+
+.hero-title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 20px;
+
+  background: linear-gradient(
+    135deg,
+    #374151,
+    #9CA3AF
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-intro {
+  color: var(--color-text-soft);
+  margin-bottom: 30px;
+  max-width: 550px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero-photo {
+  width: 300px;
+  height: 300px;
+
+  object-fit: cover;
+  border-radius: 50%;
+
+  border: 3px solid #9CA3AF;
+
+  box-shadow:
+    0 0 15px rgba(107, 114, 128, 0.25),
+    0 0 45px rgba(156, 163, 175, 0.15);
+
+  animation: float-photo 5s ease-in-out infinite;
+}
+
+@keyframes float-photo {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+
+/* =====================================================
+   7. ABOUT SECTION
+===================================================== */
+
+.about-card p {
+  margin-bottom: 16px;
+  color: var(--color-text-soft);
+}
+
+
+/* =====================================================
+   8. SKILLS SECTION
+===================================================== */
+
+.skills-heading {
+  margin: 28px 0 16px;
+  color: var(--color-rose);
+  font-weight: normal;
+}
+
+.skill-card {
+  text-align: center;
+  font-size: 1.1rem;
+
+  border-left: 3px solid #9CA3AF;
+}
+
+.skill-learning {
+  border-left-color: #6B7280;
+}
+
+
+/* =====================================================
+   9. PROJECTS SECTION
+===================================================== */
+
+.project-card {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+
+.project-image {
+  width: 280px;
+  object-fit: cover;
+
+  border-radius: 14px;
+  border: 1px solid rgba(107, 114, 128, 0.2);
+
+  background-color: var(--color-background);
+}
+
+.project-name {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+
+  color: var(--color-rose);
+}
+
+.project-features {
+  margin: 14px 0;
+  list-style: disc;
+  padding-left: 22px;
+
+  color: var(--color-text-soft);
+}
+
+.project-tech {
+  margin-bottom: 12px;
+  color: #6B7280;
+}
+
+.project-disclaimer {
+  font-size: 0.9rem;
+  color: var(--color-text-soft);
+  margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   10. CERTIFICATES SECTION
+===================================================== */
+
+.certificate-card {
+  text-align: center;
+}
+
+.certificate-image {
+  width: 100%;
+  height: auto;
+
+  border-radius: 12px;
+  margin-bottom: 16px;
+
+  border: 1px solid rgba(107, 114, 128, 0.2);
+
+  transition: transform 0.35s ease;
+}
+
+.certificate-card:hover .certificate-image {
+  transform: scale(1.025);
+}
+
+
+/* =====================================================
+   11. EDUCATION SECTION
+===================================================== */
+
+.education-card {
+  border-left: 4px solid #6B7280;
+}
+
+.education-year {
+  color: #6B7280;
+}
+
+
+/* =====================================================
+   12. CONTACT SECTION
+===================================================== */
+
+.contact-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.contact-link {
+  color: #374151;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #6B7280;
+}
+
+
+/* =====================================================
+   13. FOOTER
+===================================================== */
+
+.footer {
+  text-align: center;
+  padding: 35px 20px;
+
+  color: var(--color-text-soft);
+
+  border-top: 1px solid rgba(107, 114, 128, 0.18);
+  background: rgba(229, 231, 235, 0.65);
+}
+
+
+/* =====================================================
+   14. MOBILE AND TABLET RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    justify-content: center;
+    padding-top: 55px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-name {
+    font-size: 2.6rem;
+  }
+
+  .hero-photo {
+    width: 240px;
+    height: 240px;
+  }
+
+  .project-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .project-image {
+    width: 100%;
+  }
+
+  .navbar {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .navbar-links {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .section {
+    padding: 65px 6%;
+  }
+}
